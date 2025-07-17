@@ -1,5 +1,3 @@
-Markdown
-
 # Swag Labs Automação 🧪🚀
 
 Este repositório contém o projeto de automação de testes End-to-End (E2E) para o site de e-commerce **Swag Labs**. O principal objetivo é garantir a qualidade e a funcionalidade dos principais fluxos da aplicação através de testes automatizados, assegurando uma experiência de usuário sem falhas.
@@ -58,7 +56,7 @@ Siga os passos abaixo para configurar e executar os testes em seu ambiente local
 ### 1. Clonar o Repositório
 
 ```bash
-git clone [https://github.com/sergio-engsoft/SwagLabs_automation.git](https://github.com/sergio-engsoft/SwagLabs_automation.git)
+git clone https://github.com/sergio-engsoft/SwagLabs_automation.git
 cd SwagLabs_automation
 2. Instalar as Dependências
 Bash
@@ -111,6 +109,7 @@ SwagLabs_automation/
 ├── package.json                           # Metadados do projeto e scripts npm/yarn
 ├── package-lock.json                      # Versões exatas das dependências
 └── .gitignore                             # Arquivo para ignorar arquivos não relevantes para o Git
+```
 Integração Contínua (CI/CD) com GitHub Actions 🚀
 O projeto utiliza GitHub Actions para automação da Integração Contínua. Uma pipeline de CI/CD é configurada para garantir a qualidade do código a cada alteração:
 
@@ -135,4 +134,4 @@ Status Check: O status da execução dos testes é exibido diretamente no GitHub
 CD (Entrega Contínua - Futuras Melhorias): A pipeline está preparada para incluir etapas de Deploy Contínuo, permitindo a entrega automática da aplicação para ambientes de staging/produção após a aprovação dos testes, caso fosse um projeto de desenvolvimento de software completo.
 
 Autor 👤
-Sérgio dos Santos Soares - Meu LinkedIn | Meu GitHub
+Sérgio dos Santos Soares — [LinkedIn](https://www.linkedin.com/in/sergio-dos-santos-soares/) | [GitHub](https://github.com/sergio-engsoft)

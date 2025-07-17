@@ -77,6 +77,9 @@ jobs:
           name: mochawesome-json-reports
           path: cypress/results/
 
+      - name: Criar pasta mochawesome-report (se não existir)
+        run: mkdir -p mochawesome-report
+
       - name: Juntar e Gerar Relatório HTML (Mochawesome)
         run: |
           npm run merge:reports

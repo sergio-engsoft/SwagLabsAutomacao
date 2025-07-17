@@ -133,4 +133,4 @@ Status Check: O status da execução dos testes é exibido diretamente no GitHub
 CD (Entrega Contínua - Futuras Melhorias): A pipeline está preparada para incluir etapas de Deploy Contínuo, permitindo a entrega automática da aplicação para ambientes de staging/produção após a aprovação dos testes, caso fosse um projeto de desenvolvimento de software completo.
 
 Autor 👤
-[Meu LinkedIn](http://linkedin.com/in/sergio-dos-santos-soares) | [Meu GitHub](https://github.com/sergio-engsoft)
+Sérgio dos Santos Soares [Meu LinkedIn](http://linkedin.com/in/sergio-dos-santos-soares) | [Meu GitHub](https://github.com/sergio-engsoft)

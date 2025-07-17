@@ -1,0 +1,87 @@
+name: Cypress CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar Dependências (com cache)
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - run: npm ci
+
+      - name: Executar Testes Cypress (Desktop e Mobile)
+        run: |
+          mkdir -p cypress/results
+          npm test
+          npm run test:mobile
+
+      - name: Fazer Upload de Artefatos (Screenshots e Vídeos)
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-failed-artifacts
+          path: cypress/{screenshots,videos}
+
+      - name: Fazer Upload dos Relatórios JSON do Mochawesome
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mochawesome-json-reports
+          path: cypress/results/*.json
+
+  deploy-reports:
+    runs-on: ubuntu-latest
+    needs: cypress-run
+    if: github.ref == 'refs/heads/main' && success()
+
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar Dependências (para gerar relatório)
+        run: npm ci
+
+      - name: Baixar Relatórios JSON do Mochawesome
+        uses: actions/download-artifact@v4
+        with:
+          name: mochawesome-json-reports
+          path: cypress/results/
+
+      - name: Juntar e Gerar Relatório HTML (Mochawesome)
+        run: |
+          npm run merge:reports
+          npm run generate:report
+
+      - name: Publicar Relatório no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: mochawesome-report
+          publish_branch: gh-pages

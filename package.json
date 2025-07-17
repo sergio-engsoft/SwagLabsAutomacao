@@ -1,0 +1,36 @@
+{
+  "name": "SwagLabsAutomacao",
+  "version": "1.0.0",
+  "description": "Repositório da automação do Ecommerce Swag Labs",
+  "scripts": {
+    "cy:open:mobile": "cypress open --config viewportWidth=410 viewportHeight=860",
+    "cy:open": "cypress open",
+    "test:mobile": "cypress run --config viewportWidth=410 viewportHeight=860 --reporter mochawesome",
+    "test": "cypress run --reporter mochawesome",
+    "merge:reports": "mochawesome-merge cypress/results/*.json > mochawesome-report/output.json",
+    "generate:report": "marge mochawesome-report/output.json -f report -o mochawesome-report",
+    "clean:reports": "rd /s /q cypress\\results mochawesome-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sergio-engsoft/SwagLabsAutomacao"
+  },
+  "author": "Sérgio dos Santos Soares",
+  "license": "MIT",
+  "homepage": "https://github.com/sergio-engsoft",
+  "devDependencies": {
+    "cypress": "^14.5.2",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "config": {
+    "reporter": "mochawesome",
+    "reporterOptions": {
+      "reportDir": "cypress/results",
+      "overwrite": false,
+      "html": false,
+      "json": true
+    }
+  }
+}

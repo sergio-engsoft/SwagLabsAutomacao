@@ -53,36 +53,27 @@ Antes de executar os testes, certifique-se de ter as seguintes ferramentas insta
 
 Siga os passos abaixo para configurar e executar os testes em seu ambiente local:
 
-### 1. Clonar o Repositório
-
 ```bash
+1. Clonar o Repositório
 git clone https://github.com/sergio-engsoft/SwagLabs_automation.git
 cd SwagLabs_automation
-2. Instalar as Dependências
-Bash
 
+2. Instalar as Dependências
 npm install
+
 3. Executar os Testes
 Para abrir a interface gráfica do Cypress Test Runner:
-
-Bash
-
 npm run cy:open
+
 Para abrir o Cypress Test Runner com viewport simulando um dispositivo móvel:
-
-Bash
-
 npm run cy:open:mobile
+
 Para rodar os testes em modo headless (sem interface gráfica visível) no terminal:
-
-Bash
-
 npm test
+
 Para rodar os testes em modo headless com viewport simulando um dispositivo móvel no terminal:
-
-Bash
-
 npm run test:mobile
+
 Estrutura do Projeto 📁
 A organização do projeto segue as convenções do Cypress para garantir clareza e manutenibilidade:
 
@@ -110,28 +101,20 @@ SwagLabs_automation/
 ├── package-lock.json                      # Versões exatas das dependências
 └── .gitignore                             # Arquivo para ignorar arquivos não relevantes para o Git
 ```
-Integração Contínua (CI/CD) com GitHub Actions 🚀
-O projeto utiliza GitHub Actions para automação da Integração Contínua. Uma pipeline de CI/CD é configurada para garantir a qualidade do código a cada alteração:
+# Integração Contínua (CI/CD) com GitHub Actions 🚀
 
-Localização da Pipeline: O arquivo de configuração da pipeline está em .github/workflows/main.yml (ou um nome similar).
+O projeto utiliza **GitHub Actions** para automação da Integração Contínua. Uma pipeline de CI/CD é configurada para garantir a qualidade do código a cada alteração:
 
-Triggers: A pipeline é acionada automaticamente a cada push (envio de código) e pull request para a branch main (ou outras branches configuradas).
-
-Processo:
-
-Checkout do Código: Clona o repositório.
-
-Configuração do Ambiente: Instala o Node.js na versão correta.
-
-Instalação de Dependências: npm install (com cache para agilizar o processo).
-
-Execução dos Testes Cypress: Roda os testes Cypress em modo headless, garantindo feedback rápido sobre a saúde da aplicação.
-
-Geração de Artefatos (Opcional): Em caso de falha, faz o upload de screenshots e vídeos para facilitar a depuração.
-
-Status Check: O status da execução dos testes é exibido diretamente no GitHub por meio de um badge de status no topo do repositório, fornecendo feedback instantâneo e visibilidade sobre a qualidade do código.
-
-CD (Entrega Contínua - Futuras Melhorias): A pipeline está preparada para incluir etapas de Deploy Contínuo, permitindo a entrega automática da aplicação para ambientes de staging/produção após a aprovação dos testes, caso fosse um projeto de desenvolvimento de software completo.
+* **Localização da Pipeline:** O arquivo de configuração da pipeline está em `.github/workflows/main.yml` (ou um nome similar).
+* **Triggers:** A pipeline é acionada automaticamente a cada `push` (envio de código) e `pull request` para a branch `main` (ou outras branches configuradas).
+* **Processo:**
+    * **Checkout do Código:** Clona o repositório.
+    * **Configuração do Ambiente:** Instala o Node.js na versão correta.
+    * **Instalação de Dependências:** `npm install` (com cache para agilizar o processo).
+    * **Execução dos Testes Cypress:** Roda os testes Cypress em modo headless, garantindo feedback rápido sobre a saúde da aplicação.
+    * **Geração de Artefatos (Opcional):** Em caso de falha, faz o upload de screenshots e vídeos para facilitar a depuração.
+    * **Status Check:** O status da execução dos testes é exibido diretamente no GitHub por meio de um badge de status no topo do repositório, fornecendo feedback instantâneo e visibilidade sobre a qualidade do código.
+* **CD (Entrega Contínua - Futuras Melhorias):** A pipeline está preparada para incluir etapas de Deploy Contínuo, permitindo a entrega automática da aplicação para ambientes de staging/produção após a aprovação dos testes, caso fosse um projeto de desenvolvimento de software completo.
 
 Autor 👤
 Sérgio dos Santos Soares — [LinkedIn](https://www.linkedin.com/in/sergio-dos-santos-soares/) | [GitHub](https://github.com/sergio-engsoft)

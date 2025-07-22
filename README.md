@@ -2,14 +2,14 @@
 
 Este repositório contém o projeto de automação de testes End-to-End (E2E) para o site de e-commerce **Swag Labs**. O principal objetivo é garantir a qualidade e a funcionalidade dos principais fluxos da aplicação através de testes automatizados, assegurando uma experiência de usuário sem falhas.
 
-## Sumário do Projeto ✨
+![Desktop 2025 07 21 - 21 50 56 01 mp4](https://github.com/user-attachments/assets/e6360f14-4378-4b10-8d44-0b7f6869991d)
 
+## Sumário do Projeto ✨
 * **Tecnologias:** Cypress, JavaScript, Node.js, Git, GitHub Actions.
 * **Aplicação Testada:** [https://www.saucedemo.com/](https://www.saucedemo.com/)
 * **Foco dos Testes:** Login, Fluxo de Carrinho de Compras, Ordenação de Produtos, Checkout, e validações detalhadas de interface e dados.
 
 ## Funcionalidades Testadas (Cobertura) 🎯
-
 O projeto abrange a automação dos seguintes fluxos e cenários essenciais da aplicação:
 
 * **Fluxo de Login:**
